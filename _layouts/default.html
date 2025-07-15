@@ -7,6 +7,9 @@
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+    <h1 style="background-color: yellow; color: black; padding: 1rem; text-align: center; position: fixed; top: 0; left: 0; width: 100%; z-index: 9999;">
+  DEBUG: default.html IS LOADING
+</h1>
     {% include_cached skip-links.html %}
     {% include_cached masthead.html %}
 
