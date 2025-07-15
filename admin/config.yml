@@ -1,25 +1,19 @@
-# Decap CMS Configuration
+# This is the full and correct content for admin/config.yml
 
-# The backend tells Decap where your content is stored.
 backend:
-  name: git-gateway # Use Netlify's Git Gateway for authentication
-  branch: main # Or master
+  name: git-gateway
+  branch: main
 
-# The rest of your config (media_folder, collections) stays the same.
+media_folder: "assets/images"
+public_folder: "/assets/images"
 
-# This is where Decap will upload media files like images.
-media_folder: "assets/images" # Path where files will be stored
-public_folder: "/assets/images" # The src attribute for the media file
-
-# Collections are the different types of content you want to manage.
 collections:
-  # Collection for Blog Posts
-  - name: "posts" # Used in routes, e.g., /admin/collections/posts
-    label: "Posts" # Used in the UI
-    folder: "_posts" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template
-    fields: # The fields for each document, usually in the front matter
+  - name: "posts"
+    label: "Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
@@ -27,13 +21,11 @@ collections:
       - {label: "Featured Image", name: "image", widget: "image", required: false}
       - {label: "External URL", name: "external_url", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
-
-  # Collection for Pages (like About, Contact, etc.)
   - name: "pages"
     label: "Pages"
-    folder: "/" # Edit pages in the root folder
-    create: false # It's safer to not create top-level pages via CMS
-    filter: {field: "layout", value: "page"} # Show only files with layout: page
+    folder: "/"
+    create: false
+    filter: {field: "layout", value: "page"}
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Permalink", name: "permalink", widget: "string"}
