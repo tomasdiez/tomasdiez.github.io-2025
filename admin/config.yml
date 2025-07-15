@@ -2,7 +2,6 @@
 
 # The backend tells Decap where your content is stored.
 backend:
-backend:
   name: git-gateway # Use Netlify's Git Gateway for authentication
   branch: main # Or master
 
