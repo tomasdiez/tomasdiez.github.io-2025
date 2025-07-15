@@ -10,12 +10,6 @@
     {% include_cached skip-links.html %}
     {% include_cached masthead.html %}
     
-    {% unless page.url contains '/admin' %}
-  <script src="/assets/js/jquery.min.js"></script>
-  <script src="/assets/js/bootstrap.js"></script>
-  <script src="/assets/js/main.js"></script>
-{% endunless %}
-
     <div class="initial-content">
       {{ content }}
       {% include after-content.html %}
@@ -34,7 +28,9 @@
       </footer>
     </div>
 
-    {% include scripts.html %}
+    {% unless page.url contains '/admin' %}
+      {% include scripts.html %}
+    {% endunless %}
     
   </body>
 </html>
