@@ -1,0 +1,10 @@
+# This file tells Netlify how to build and configure your site.
+
+[[headers]]
+  # Apply this rule to all pages on your site
+  for = "/*"
+  [headers.values]
+    # This is the Content Security Policy header.
+    # We are allowing scripts from 'self' (your domain), unpkg (where Decap lives),
+    # Google Analytics, and most importantly, we are enabling 'unsafe-eval'.
+    Content-Security-Policy = "script-src 'self' 'unsafe-eval' https://unpkg.com https://www.googletagmanager.com; object-src 'none';"

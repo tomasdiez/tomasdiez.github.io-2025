@@ -2,11 +2,11 @@
 
 # The backend tells Decap where your content is stored.
 backend:
-  name: github
-  repo: tomasdiez/tomasdiez.github.io # IMPORTANT: Change this after you rename your repo
-  branch: main # Or master, depending on your branch name
-  auth_type: implicit # This uses the simpler, modern browser-based auth flow
-  app_id: Ov23lijtkP1inU3IPWHO # We will get this in the next step
+backend:
+  name: git-gateway # Use Netlify's Git Gateway for authentication
+  branch: main # Or master
+
+# The rest of your config (media_folder, collections) stays the same.
 
 # This is where Decap will upload media files like images.
 media_folder: "assets/images" # Path where files will be stored
